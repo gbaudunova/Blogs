@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>
+            Blog
+    </title>
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body>
+  <center>
+    <h1> Blog</h1>
+  <div class="Page" id="untitled_page_page">
+      <div>
+         <form action="{% url 'main:index'%}"  method="POST">{% csrf_token %}
+             <input type="text" required class="form-control" name="title"
+               placeholder="enter a title" id="title-field">
+             <br>
+             <input type="url" required class="form-control" name="url"
+               placeholder="enter a valid url" id="url-field">
+            <br>
+             <input type="url" required class="form-control" name="blog_url"
+               placeholder="enter a valid url" id="url-field">
+             <br>
+            <button type="submit">Submit</button>
+        </form>
+       </div>
+  </div>
+  </center>
+</body>
+</html>
